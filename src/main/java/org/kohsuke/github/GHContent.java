@@ -121,6 +121,7 @@ public class GHContent extends GitHubInteractiveObject implements Refreshable {
      *             the io exception
      * @deprecated Use {@link #read()}
      */
+    @Deprecated
     @SuppressFBWarnings("DM_DEFAULT_ENCODING")
     public String getContent() throws IOException {
         return new String(Base64.getMimeDecoder().decode(getEncodedContent()));
@@ -138,6 +139,7 @@ public class GHContent extends GitHubInteractiveObject implements Refreshable {
      *             the io exception
      * @deprecated Use {@link #read()}
      */
+    @Deprecated
     public String getEncodedContent() throws IOException {
         refresh(content);
         return content;
@@ -170,13 +172,6 @@ public class GHContent extends GitHubInteractiveObject implements Refreshable {
         return html_url;
     }
 
-    /**
-     * Retrieves the actual content stored here.
-     *
-     * @return the input stream
-     * @throws IOException
-     *             Signals that an I/O exception has occurred.
-     */
     /**
      * Retrieves the actual bytes of the blob.
      *

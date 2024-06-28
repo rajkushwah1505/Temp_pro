@@ -193,35 +193,6 @@ class GitHubClient {
     }
 
     /**
-     * Gets connector.
-     *
-     * @return the connector
-     */
-    @Deprecated
-    public HttpConnector getConnector() {
-        if (!(connector instanceof HttpConnector)) {
-            throw new UnsupportedOperationException("This GitHubConnector does not support HttpConnector.connect().");
-        }
-
-        LOGGER.warning(
-                "HttpConnector and getConnector() are deprecated. Please file an issue describing your use case.");
-        return (HttpConnector) connector;
-    }
-
-    /**
-     * Sets the custom connector used to make requests to GitHub.
-     *
-     * @param connector
-     *            the connector
-     * @deprecated HttpConnector should not be changed.
-     */
-    @Deprecated
-    public void setConnector(GitHubConnector connector) {
-        LOGGER.warning("Connector should not be changed. Please file an issue describing your use case.");
-        this.connector = connector;
-    }
-
-    /**
      * Is this an anonymous connection.
      *
      * @return {@code true} if operations that require authentication will fail.

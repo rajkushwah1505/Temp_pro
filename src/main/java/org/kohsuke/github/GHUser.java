@@ -23,8 +23,6 @@
  */
 package org.kohsuke.github;
 
-import com.infradna.tool.bridge_method_injector.WithBridgeMethods;
-
 import java.io.IOException;
 import java.util.*;
 
@@ -77,7 +75,6 @@ public class GHUser extends GHPerson {
      * @throws IOException
      *             the io exception
      */
-    @WithBridgeMethods(Set.class)
     public GHPersonSet<GHUser> getFollows() throws IOException {
         return new GHPersonSet<GHUser>(listFollows().toList());
     }
@@ -98,7 +95,6 @@ public class GHUser extends GHPerson {
      * @throws IOException
      *             the io exception
      */
-    @WithBridgeMethods(Set.class)
     public GHPersonSet<GHUser> getFollowers() throws IOException {
         return new GHPersonSet<GHUser>(listFollowers().toList());
     }
@@ -209,7 +205,6 @@ public class GHUser extends GHPerson {
      * @throws IOException
      *             the io exception
      */
-    @WithBridgeMethods(Set.class)
     public GHPersonSet<GHOrganization> getOrganizations() throws IOException {
         GHPersonSet<GHOrganization> orgs = new GHPersonSet<GHOrganization>();
         Set<String> names = new HashSet<String>();
